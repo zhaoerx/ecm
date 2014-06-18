@@ -3,6 +3,7 @@ ecm
 ECM Assets
 
 Add FileNet related jars:
+mvn install:install-file -Dfile=Jace.jar -DgroupId=com.ibm.filenet -DartifactId=Jace -Dversion=5.2 -Dpackaging=jar -DgeneratePom=true 
 mvn install:install-file -Dfile=pe.jar -DgroupId=com.ibm.filenet -DartifactId=pe -Dversion=5.2 -Dpackaging=jar -DgeneratePom=true 
 mvn install:install-file -Dfile=pe3pt.jar -DgroupId=com.ibm.filenet -DartifactId=pe3pt -Dversion=5.2 -Dpackaging=jar -DgeneratePom=true 
 mvn install:install-file -Dfile=peResources.jar -DgroupId=com.ibm.filenet -DartifactId=peResources -Dversion=5.2 -Dpackaging=jar -DgeneratePom=true 
