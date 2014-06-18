@@ -1,0 +1,140 @@
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+
+<!-- 
+Smart developers always View Source. 
+
+This application was built using Adobe Flex, an open source framework
+for building rich Internet applications that get delivered via the
+Flash Player or to desktops via Adobe AIR. 
+
+Learn more about Flex at http://flex.org 
+
+http://localhost:8080/ecma/tracker/TrackerPro.html#workflowName=TestWFVersion;workflowNumber=
+http://localhost:8080/ecma/tracker/TrackerPro.html#workflowName=TestWFVersion;workflowNumber=0E6F5C2F3511D34688B330951924A296;fieldNames=F_Duration
+
+// -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--  BEGIN Browser History required section -->
+<link rel="stylesheet" type="text/css" href="history/history.css" />
+<!--  END Browser History required section -->
+
+<title>流程历史跟踪</title>
+<script src="AC_OETags.js" language="javascript"></script>
+
+<!--  BEGIN Browser History required section -->
+<script src="history/history.js" language="javascript"></script>
+<!--  END Browser History required section -->
+
+<style>
+body { margin: 0px; overflow:hidden }
+</style>
+<script language="JavaScript" type="text/javascript">
+<!--
+// -----------------------------------------------------------------------------
+// Globals
+// Major version of Flash required
+var requiredMajorVersion = 10;
+// Minor version of Flash required
+var requiredMinorVersion = 0;
+// Minor version of Flash required
+var requiredRevision = 124;
+// -----------------------------------------------------------------------------
+// -->
+</script>
+</head>
+
+<body scroll="no">
+<script language="JavaScript" type="text/javascript">
+<!--
+// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
+var hasProductInstall = DetectFlashVer(6, 0, 65);
+
+// Version check based upon the values defined in globals
+var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
+
+if ( hasProductInstall && !hasRequestedVersion ) {
+	// DO NOT MODIFY THE FOLLOWING FOUR LINES
+	// Location visited after installation is complete if installation is required
+	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
+	var MMredirectURL = window.location;
+    document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+    var MMdoctitle = document.title;
+
+	AC_FL_RunContent(
+		"src", "playerProductInstall",
+		"FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
+		"width", "100%",
+		"height", "100%",
+		"align", "middle",
+		"id", "TrackerPro",
+		"quality", "high",
+		"bgcolor", "#fbfbfb",
+		"name", "TrackerPro",
+		"allowScriptAccess","sameDomain",
+		"type", "application/x-shockwave-flash",
+		"pluginspage", "http://www.adobe.com/go/getflashplayer"
+	);
+} else if (hasRequestedVersion) {
+	// if we've detected an acceptable version
+	// embed the Flash Content SWF when all tests are passed
+	AC_FL_RunContent(
+			"src", "TrackerPro",
+			"width", "100%",
+			"height", "100%",
+			"align", "middle",
+			"id", "TrackerPro",
+			"quality", "high",
+			"bgcolor", "#fbfbfb",
+			"name", "TrackerPro",
+			"allowScriptAccess","sameDomain",
+			"type", "application/x-shockwave-flash",
+			"pluginspage", "http://www.adobe.com/go/getflashplayer"
+	);
+  } else {  // flash is too old or we can't detect the plugin
+	var pluginFileName= (isIE==true)?'install_flash_player_ie.exe':'install_flash_player.exe';
+    var alternateContent = '浏览该页面需要安装flash插件或者您的flash插件版本过低。'
+   	+ '<a href=../../download/flash/'+ pluginFileName + '>Flash插件下载地址</a>';
+    document.write(alternateContent);  // insert non-flash content
+  }
+
+function openSingleHistory(processName, seqNum, formId) {
+	if (formId) {
+		var heigth = window.screen.height * 0.9;
+	    var width = window.screen.width * 0.9;
+	    var style = "height=" + heigth + ", width=" + width + ", resizable=yes";
+	    //发送到controller去获得Form文档并显示
+	    var url = "../getHistoryForm.do?FormID="+formId;
+ 	    var w = window.open (url, "Bamboo", style);
+ 	   /*  if(dojo.isIE==8){
+ 	    	w.location.href = url;
+ 	    } */
+	   //window.open ("/cnnpbpm/web/DisplayForm.jsp?action=history&formID="+formID, "Bamboo", style);
+	}
+}
+// -->
+</script>
+<noscript>
+  	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="TrackerPro" width="100%" height="100%"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="TrackerPro.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#fbfbfb" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<embed src="TrackerPro.swf" quality="high" bgcolor="#fbfbfb"
+				width="100%" height="100%" name="TrackerPro" align="middle"
+				play="true"
+				loop="false"
+				quality="high"
+				allowScriptAccess="sameDomain"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+	</object>
+</noscript>
+</body>
+</html>
