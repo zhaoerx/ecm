@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head>
-    <title><decorator:title default="Welcome"/> | <fmt:message key="webapp.name"/></title>
+    <title><decorator:title default="Welcome"/> | ECM</title>
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
@@ -46,7 +46,7 @@
 
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span7">
+            <div class="span9">
                 <%@ include file="/messages.jsp"%>
                 <decorator:body/>
 
