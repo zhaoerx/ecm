@@ -20,7 +20,7 @@
 			<td>${item.f_WorkFlowNumber }</td>
 			<td>${item.subject }</td>
 			<td><fmt:formatDate value="${item.f_TimeStamp}"
-					pattern="MM/dd/yyyy HH:mm aa" type="time" timeStyle="full" /></td>
+					pattern="${datePattern }" type="time" timeStyle="full" /></td>
 			<td><a
 				href="tracker/TrackerPro.html#workflowName=${item.workflowName};workflowNumber=${item.f_WorkFlowNumber};fieldNames=F_Duration"
 				target="{item.f_WorkFlowNumber}"><i class="icon-play"></i></a></td>

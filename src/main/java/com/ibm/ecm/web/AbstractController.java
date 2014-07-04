@@ -13,6 +13,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.ibm.ecm.util.JsonUtil;
 import com.ibm.eu.constants.P8BpmConstants;
+import com.ibm.filenet.helper.ce.ObjectStoreProvider;
 import com.ibm.filenet.helper.pe.SessionHelper;
 
 import filenet.vw.api.VWSession;
@@ -26,6 +27,21 @@ public abstract class AbstractController {
 
 	protected final Logger logger = Logger.getLogger(getClass());
 
+	/**
+	 * 获取Filenet OS Provider对象。
+	 * 
+	 * @return
+	 * @throws UserException
+	 */
+	public ObjectStoreProvider getOSP(HttpServletRequest request) {
+		Object obj = request.getSession().getAttribute("OSP");
+		if(obj == null){
+			obj = new ObjectStoreProvider();
+			request.getSession().setAttribute("OSP", obj);
+		}
+		return (ObjectStoreProvider) obj;
+	}
+	
 	/**
 	 * 获取Filenet session对象。
 	 * 

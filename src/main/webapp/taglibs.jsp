@@ -7,5 +7,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/page" prefix="page"%>
 
-<c:set var="datePattern"><fmt:message key="date.format"/></c:set>
+<c:set var="datePattern">MM/dd/yyyy HH:mm aa</c:set>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>

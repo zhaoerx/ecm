@@ -10,6 +10,7 @@
 	<context:annotation-config />
 	
 	<context:component-scan base-package="com.ibm.ecm.web" />
+	<context:component-scan base-package="com.ibm.ecm.service" />
 	<context:component-scan base-package="hello" />
 	
 	<bean

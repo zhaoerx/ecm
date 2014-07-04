@@ -34,6 +34,7 @@
                     <ul class="nav">
                         <li><a href="${ctx}/mywork.do" title="My Work">Todos</a></li>
                         <li><a href="${ctx}/myhistory.do" title="View history">History</a></li>
+                        <li><a href="${ctx}/myfiles.do" title="My Box">My Files</a></li>
                         <!-- Add new menu items here -->
                     </ul>
                 </div>
