@@ -3,6 +3,7 @@ package com.ibm.ecm.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.security.auth.Subject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,9 +12,11 @@ import org.omg.CORBA.UserException;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import com.filenet.api.util.UserContext;
 import com.ibm.ecm.util.JsonUtil;
 import com.ibm.eu.constants.P8BpmConstants;
 import com.ibm.filenet.helper.ce.ObjectStoreProvider;
+import com.ibm.filenet.helper.ce.util.UserContextUtils;
 import com.ibm.filenet.helper.pe.SessionHelper;
 
 import filenet.vw.api.VWSession;
@@ -39,6 +42,11 @@ public abstract class AbstractController {
 			obj = new ObjectStoreProvider();
 			request.getSession().setAttribute("OSP", obj);
 		}
+		if(UserContext.get().getSubject() == null) {
+			Subject subject = ((ObjectStoreProvider) obj).getAuthenticatedObjectStore().getSubject();
+			UserContext.get().pushSubject(subject);
+		}
+		
 		return (ObjectStoreProvider) obj;
 	}
 	

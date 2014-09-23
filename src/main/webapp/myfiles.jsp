@@ -9,16 +9,25 @@
 		<th>名称</th>
 		<th>修改日期</th>
 		<th>大小</th>
-		<th>种类</th>
 	</tr>
 	<c:forEach items="${containees }" var="item">
 		<tr>
-			<td>${item._Name }</td>
 			<td>
-			<fmt:formatDate value="${item._DateLastModified}"
+			<c:if test="${item.type == 0 }">
+			<a href="myfiles.do?path=${item.path }">
+			<i class="icon-folder-close"></i>${item.name }
+			</a>
+			</c:if>
+			<c:if test="${item.type == 1 }">
+			
+			<i class="icon-file"></i>${item.name }
+			</c:if>
+			 
+			 </td>
+			<td>
+			<fmt:formatDate value="${item.lastModifiedDate}"
 					pattern="${datePattern }" /></td>
-			<td>--</td>
-			<td>目录</td>
+			<td>${item.size }</td>
 		</tr>
 	</c:forEach>
 </table>

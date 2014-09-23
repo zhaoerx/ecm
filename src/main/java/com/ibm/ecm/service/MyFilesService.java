@@ -5,10 +5,14 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.filenet.api.collection.DocumentSet;
 import com.filenet.api.collection.FolderSet;
 import com.filenet.api.collection.ReferentialContainmentRelationshipSet;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ReferentialContainmentRelationship;
+import com.ibm.ecm.model.Item;
+import com.ibm.ecm.util.ItemCollectionUtil;
+import com.ibm.ecm.util.P8Transformer;
 import com.ibm.filenet.helper.ce.ObjectStoreProvider;
 import com.ibm.filenet.helper.ce.util.EngineCollectionUtils;
 
@@ -29,6 +33,16 @@ public class MyFilesService {
 			log.debug(f.getClassName());
 		}
 		return list;
+	}
+	
+	public List<Item> getContainees(ObjectStoreProvider osp, String path) {
+		Folder folder = osp.fetchFolderFromPath(path);
+		log.debug(folder.get_Id());
+		FolderSet subFolders = folder.get_SubFolders();
+		List<Item> containees = ItemCollectionUtil.collect(subFolders, new P8Transformer());
+		DocumentSet containedDocs = folder.get_ContainedDocuments();
+		ItemCollectionUtil.collect(containedDocs, new P8Transformer(), containees);
+		return containees;
 	}
 
 }
